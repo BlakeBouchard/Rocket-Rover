@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GreenAlienSpawner : MonoBehaviour {
+public class AlienSpawner : MonoBehaviour {
 
-    public Transform greenAlienPrefab;
+    public Transform alienPrefab;
 
     public float baseSpawnTime = 3.0f;
 
@@ -15,8 +15,8 @@ public class GreenAlienSpawner : MonoBehaviour {
     IEnumerator SpawnAlien()
     {
         while (true) {
-            Transform alien = Instantiate(greenAlienPrefab, transform.position, Quaternion.identity) as Transform;
-            alien.name = greenAlienPrefab.name;
+            Transform alien = Instantiate(alienPrefab, transform.position, Quaternion.identity) as Transform;
+            alien.name = alienPrefab.name;
             yield return new WaitForSeconds(baseSpawnTime);
         }
     }

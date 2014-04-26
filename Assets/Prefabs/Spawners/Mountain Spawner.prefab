@@ -40,6 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mountainPrefabs:
   - {fileID: 400000, guid: 8d793154e27d1944c9d030582b74af76, type: 2}
+  - {fileID: 400000, guid: ea0deb98ab10ba94d9a85d64a2424741, type: 2}
   spawnSpeed: 1
 --- !u!1001 &100100000
 Prefab:

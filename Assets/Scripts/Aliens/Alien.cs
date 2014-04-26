@@ -14,7 +14,7 @@ public class Alien : MonoBehaviour {
     // private bool isActive = true;
 
 	// Use this for initialization
-	void Start ()
+	void Awake()
     {
         float jumpCoefficient = Random.Range(0.1f, 0.9f);
         float forwardForce = minForwardForce + ((maxForwardForce - minForwardForce) * jumpCoefficient);

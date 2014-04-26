@@ -7,6 +7,7 @@ TagManager:
   - PlayerProjectile
   - Boundary
   - Enemy
+  - EnemyProjectile
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   User Layer 9: PlayerProjectiles
   User Layer 10: Ground
   User Layer 11: Enemy
-  User Layer 12: 
+  User Layer 12: EnemyProjectile
   User Layer 13: 
   User Layer 14: 
   User Layer 15: 
