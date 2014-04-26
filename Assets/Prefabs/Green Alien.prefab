@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Back Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200002}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Back Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 212: {fileID: 21200004}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Front Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 212: {fileID: 21200006}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Front Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,8 @@ GameObject:
   - 212: {fileID: 21200008}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  - 50: {fileID: 5000000}
+  m_Layer: 11
   m_Name: Green Alien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -89,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: -.578132331, w: .815943122}
-  m_LocalPosition: {x: -.140533403, y: -.0139681976, z: 2}
+  m_LocalPosition: {x: -.140533403, y: -.0139681976, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -100,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: -.578132153, y: .815943182, z: 2.52709587e-08, w: -3.56660088e-08}
-  m_LocalPosition: {x: .0714592189, y: -.00330355065, z: 2}
+  m_LocalPosition: {x: .0714592189, y: -.00330355065, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -111,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: .0984974951, y: -.995137334, z: 4.30546443e-09, w: -4.34988365e-08}
-  m_LocalPosition: {x: -.0293297581, y: -.343585163, z: .99999994}
+  m_LocalPosition: {x: -.0293297581, y: -.343585163, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -122,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: -.393837512, w: .919180095}
-  m_LocalPosition: {x: -.252828121, y: -.292747617, z: 1}
+  m_LocalPosition: {x: -.252828121, y: -.292747617, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -133,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.29122639, y: 2.71457124, z: 0}
+  m_LocalPosition: {x: 4.76016951, y: -4.53178644, z: 1}
   m_LocalScale: {x: 2.82879114, y: 2.82879114, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -141,6 +142,21 @@ Transform:
   - {fileID: 400004}
   - {fileID: 400006}
   m_Father: {fileID: 0}
+--- !u!50 &5000000
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!58 &5800000
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -163,6 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc7ddc6c998d8e408bb3d2161a01151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 600
+  forwardForce: 250
+  killSpinForce: -200
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

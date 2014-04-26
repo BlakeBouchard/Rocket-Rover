@@ -17,7 +17,7 @@ public class Rocket : MonoBehaviour {
         }
         else if (collision.collider.tag == "Enemy")
         {
-            Explode();
+            // Explode();
         }
     }
 

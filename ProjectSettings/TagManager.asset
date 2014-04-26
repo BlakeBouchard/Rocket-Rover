@@ -18,8 +18,8 @@ TagManager:
   Builtin Layer 7: 
   User Layer 8: Player
   User Layer 9: PlayerProjectiles
-  User Layer 10: 
-  User Layer 11: 
+  User Layer 10: Ground
+  User Layer 11: Enemy
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 
