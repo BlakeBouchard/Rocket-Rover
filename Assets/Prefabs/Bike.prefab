@@ -183,8 +183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 80
   jumpForce: 800
-  stoppingForce: 100
-  maxSpeed: 200
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
