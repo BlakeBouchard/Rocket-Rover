@@ -36,6 +36,12 @@ public class GreenAlien : MonoBehaviour {
 
     private void BlewUp()
     {
+        SpriteRenderer sprite = this.GetComponent<SpriteRenderer>();
+        sprite.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+        foreach (SpriteRenderer childSprite in this.GetComponentsInChildren<SpriteRenderer>())
+        {
+            childSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+        }
         rigidbody2D.AddTorque(killSpinForce);
         // isActive = false;
         collider2D.enabled = false;
