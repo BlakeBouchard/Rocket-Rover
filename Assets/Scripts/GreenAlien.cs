@@ -3,8 +3,12 @@ using System.Collections;
 
 public class GreenAlien : MonoBehaviour {
 
-    public float jumpForce = 1000.0f;
-    public float forwardForce = 100.0f;
+    public float minJumpForce = 2500.0f;
+    public float maxJumpForce = 3300.0f;
+
+    public float minForwardForce = 1100.0f;
+    public float maxForwardForce = 1800.0f;
+
     public float killSpinForce = 50.0f;
 
     // private bool isActive = true;
@@ -12,6 +16,12 @@ public class GreenAlien : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        float jumpCoefficient = Random.Range(0.1f, 0.9f);
+        float forwardForce = minForwardForce + ((maxForwardForce - minForwardForce) * jumpCoefficient);
+        float jumpForce = minJumpForce + ((maxJumpForce - minJumpForce) * (1 - jumpCoefficient));
+
+        Debug.Log("Jump values for alien: Forward " + forwardForce + ", Jump " + jumpForce);
+
         rigidbody2D.AddForce(new Vector2(-forwardForce, jumpForce));
 	}
 
