@@ -183,7 +183,7 @@ MonoBehaviour:
   maxJumpForce: 3300
   minForwardForce: 1100
   maxForwardForce: 1800
-  killSpinForce: 50
+  killSpinForce: 200
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
