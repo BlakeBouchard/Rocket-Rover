@@ -77,7 +77,9 @@ GameObject:
   - 212: {fileID: 21200008}
   - 50: {fileID: 5000004}
   - 114: {fileID: 11400000}
-  - 61: {fileID: 6100000}
+  - 60: {fileID: 6000000}
+  - 58: {fileID: 5800002}
+  - 58: {fileID: 5800000}
   m_Layer: 8
   m_Name: Bike
   m_TagString: Untagged
@@ -188,8 +190,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6100000
-BoxCollider2D:
+--- !u!58 &5800000
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -197,8 +199,59 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1.85000002, y: 1.00999999}
-  m_Center: {x: -.0500000007, y: -.189999998}
+  m_Radius: .25
+  m_Center: {x: -.723999977, y: -.435000002}
+--- !u!58 &5800002
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: .620000005, y: -.439999998}
+--- !u!60 &6000000
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: .229999989, y: -.294999987}
+      - {x: .407763481, y: -.310357332}
+      - {x: .549818516, y: -.151068687}
+      - {x: .629999995, y: -.0850000009}
+      - {x: .629999995, y: .00499999989}
+      - {x: .429999977, y: .114999995}
+      - {x: .199999988, y: .264999986}
+      - {x: .199999988, y: .264999986}
+      - {x: .146975517, y: .268024683}
+      - {x: .140000001, y: .104999997}
+      - {x: .0299999993, y: -.0449999981}
+      - {x: -.389999986, y: -.0449999981}
+      - {x: -.48999998, y: .0249999985}
+      - {x: -.519999981, y: .0249999985}
+      - {x: -.639999986, y: -.0850000009}
+      - {x: -.639999986, y: -.13499999}
+      - {x: -.639999986, y: -.13499999}
+      - {x: -.5, y: -.294999987}
+      - {x: -.399999976, y: -.294999987}
+      - {x: -.329999983, y: -.254999995}
+      - {x: -.0799999982, y: -.254999995}
+      - {x: -.00999999978, y: -.294999987}
+    - - {x: .419999987, y: .0449999981}
+      - {x: .429999977, y: .0350000001}
+      - {x: .429999977, y: .0350000001}
+      - {x: .419999987, y: .0449999981}
+    - - {x: .25, y: .0850000009}
+      - {x: .389999986, y: .0649999976}
+      - {x: .25999999, y: .0850000009}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1

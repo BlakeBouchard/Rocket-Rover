@@ -20,15 +20,10 @@ public class BikeMovement : MonoBehaviour {
         {
             onGround = true;
         }
-        /*
         else if (collision.collider.tag == "Enemy")
         {
-            if (collision.collider.gameObject.GetComponent<GreenAlien>().IsHarmful())
-            {
-                Application.LoadLevel(Application.loadedLevel);
-            }
+            Application.LoadLevel(Application.loadedLevel);
         }
-        */
     }
 	
 	// Update is called once per frame
