@@ -17,12 +17,13 @@ public class Rocket : MonoBehaviour {
         }
         else if (collision.collider.tag == "Enemy")
         {
-            // Explode();
+            StartCoroutine("Explode");
         }
     }
 
-    private void Explode()
+    IEnumerator Explode()
     {
+        yield return new WaitForSeconds(0.01f);
         Destroy(this.gameObject);
     }
 	

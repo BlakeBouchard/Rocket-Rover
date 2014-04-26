@@ -5,6 +5,7 @@ public class BikeMovement : MonoBehaviour {
 
     public float acceleration = 80.0f;
     public float jumpForce = 800.0f;
+    public float torque = -10.0f;
 
     private bool onGround = false;
 
@@ -30,6 +31,11 @@ public class BikeMovement : MonoBehaviour {
 	void Update ()
     {
         rigidbody2D.AddForce(new Vector2(Input.GetAxis("Horizontal") * acceleration, 0));
+
+        if (!onGround)
+        {
+            rigidbody2D.AddTorque(Input.GetAxis("Horizontal") * torque);
+        }
 
         // Jump control
         if (Input.GetButtonDown("Jump") && onGround)

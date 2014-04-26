@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GreenAlien : MonoBehaviour {
+public class Alien : MonoBehaviour {
 
     public float minJumpForce = 2500.0f;
     public float maxJumpForce = 3300.0f;
@@ -20,7 +20,7 @@ public class GreenAlien : MonoBehaviour {
         float forwardForce = minForwardForce + ((maxForwardForce - minForwardForce) * jumpCoefficient);
         float jumpForce = minJumpForce + ((maxJumpForce - minJumpForce) * (1 - jumpCoefficient));
 
-        Debug.Log("Jump values for alien: Forward " + forwardForce + ", Jump " + jumpForce);
+        // Debug.Log("Jump values for alien: Forward " + forwardForce + ", Jump " + jumpForce);
 
         rigidbody2D.AddForce(new Vector2(-forwardForce, jumpForce));
 	}
@@ -44,7 +44,7 @@ public class GreenAlien : MonoBehaviour {
     }
     */
 
-    private void BlewUp()
+    protected void BlewUp()
     {
         SpriteRenderer sprite = this.GetComponent<SpriteRenderer>();
         sprite.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);

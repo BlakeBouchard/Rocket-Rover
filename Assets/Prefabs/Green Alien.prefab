@@ -74,8 +74,8 @@ GameObject:
   - 4: {fileID: 400008}
   - 212: {fileID: 21200008}
   - 58: {fileID: 5800000}
-  - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
+  - 114: {fileID: 11400002}
   m_Layer: 11
   m_Name: Green Alien
   m_TagString: Enemy
@@ -168,7 +168,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .239999995
   m_Center: {x: 0, y: 0}
---- !u!114 &11400000
+--- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -176,12 +176,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc7ddc6c998d8e408bb3d2161a01151, type: 3}
+  m_Script: {fileID: 11500000, guid: b83caeccf3e71474bab11ca874329d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 2500
-  forwardForce: 1800
-  killSpinForce: -4000
+  minJumpForce: 2500
+  maxJumpForce: 3300
+  minForwardForce: 1100
+  maxForwardForce: 1800
+  killSpinForce: 50
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
