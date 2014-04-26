@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Rocket : MonoBehaviour {
 
+    public Transform explosionPrefab;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -15,7 +17,7 @@ public class Rocket : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        else if (collision.collider.tag == "Enemy")
+        else if (collision.collider.tag == "Enemy" || collision.collider.tag == "Ground")
         {
             StartCoroutine("Explode");
         }
@@ -23,7 +25,8 @@ public class Rocket : MonoBehaviour {
 
     IEnumerator Explode()
     {
-        yield return new WaitForSeconds(0.01f);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.001f);
         Destroy(this.gameObject);
     }
 	
