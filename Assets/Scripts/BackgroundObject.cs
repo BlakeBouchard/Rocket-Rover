@@ -10,6 +10,11 @@ public class BackgroundObject : MonoBehaviour {
     {
 	
 	}
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
