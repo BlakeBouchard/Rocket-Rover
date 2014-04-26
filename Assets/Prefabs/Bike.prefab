@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5f0c187d34b0e44a87a31da99494e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketPrefab: {fileID: 400000, guid: 44df457a02ab9b34986d9f263e4512e7, type: 2}
+  rocketSpeed: 100
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
