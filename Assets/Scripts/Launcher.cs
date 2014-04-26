@@ -30,7 +30,7 @@ public class Launcher : MonoBehaviour {
         {
             Transform rocket = Instantiate(rocketPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), transform.rotation) as Transform;
             rocket.name = rocketPrefab.name;
-            float rocketAngle = (transform.eulerAngles.z) * Mathf.Deg2Rad;
+            float rocketAngle = transform.eulerAngles.z * Mathf.Deg2Rad;
             rocket.rigidbody2D.velocity = new Vector2(Mathf.Cos(rocketAngle) * rocketSpeed, Mathf.Sin(rocketAngle) * rocketSpeed);
         }
 	}

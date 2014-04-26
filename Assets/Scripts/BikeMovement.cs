@@ -17,11 +17,13 @@ public class BikeMovement : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground")
+        string colliderTag = collision.collider.tag;
+
+        if (colliderTag == "Ground")
         {
             onGround = true;
         }
-        else if (collision.collider.tag == "Enemy")
+        else if (colliderTag == "Enemy" || colliderTag == "EnemyProjectile")
         {
             Application.LoadLevel(Application.loadedLevel);
         }
