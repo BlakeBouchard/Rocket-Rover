@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public float velocity = 40.0f;
 
 	// Use this for initialization
-	void Start ()
+	void Start()
     {
         SetUpCollisionIgnores();
         this.distanceLabel = GameObject.Find("Distance Travelled").GetComponent<GUIText>();
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
     {
         distanceTravelled += velocity * Time.deltaTime;
         distanceLabel.text = "Distance Travelled: " + (int)distanceTravelled + " m";
