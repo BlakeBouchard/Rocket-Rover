@@ -9,24 +9,14 @@ public class BikeMovement : MonoBehaviour {
 
     private bool onGround = false;
 
-    public float distanceTravelled = 0;
-    GUIText distanceLabel;
-
-    public float velocity = 40.0f;
-
-    public Transform gameOverPrefab;
     public Transform explosionPrefab;
 
-    public int highScore = 0;
+    private GameManager gameManager;
 
 	// Use this for initialization
 	void Start()
     {
-        this.distanceLabel = GameObject.Find("Distance Travelled").GetComponent<GUIText>();
-        if (PlayerPrefs.HasKey("High Score"))
-        {
-            this.highScore = PlayerPrefs.GetInt("High Score");
-        }
+        this.gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -40,18 +30,7 @@ public class BikeMovement : MonoBehaviour {
         else if (colliderTag == "Enemy" || colliderTag == "EnemyProjectile")
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Debug.Log("Player Exploded!");
-            Instantiate(gameOverPrefab);
-            GUIText blewUpGUI = GameObject.Find("You Blew Up").GetComponent<GUIText>();
-            if ((int)distanceTravelled > highScore)
-            {
-                blewUpGUI.text = "New High Score!\nYou roved " + (int)distanceTravelled + " metres!";
-                PlayerPrefs.SetInt("High Score", (int)distanceTravelled);
-            }
-            else
-            {
-                blewUpGUI.text = "You got blown up by Mars aliens!\nYour high score is: " + highScore + " metres";
-            }
+            gameManager.EndGame();
             Destroy(this.gameObject);
         }
     }
@@ -60,9 +39,6 @@ public class BikeMovement : MonoBehaviour {
 	void Update()
     {
         rigidbody2D.AddForce(new Vector2(Input.GetAxis("Horizontal") * acceleration, 0));
-
-        distanceTravelled += velocity * Time.deltaTime;
-        distanceLabel.text = "Distance Travelled: " + (int)distanceTravelled + " m";
 
         if (!onGround)
         {
@@ -75,11 +51,6 @@ public class BikeMovement : MonoBehaviour {
             // Add upward force
             rigidbody2D.AddForce(new Vector2(0, jumpForce));
             onGround = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.LoadLevel(0);
         }
 	}
 }

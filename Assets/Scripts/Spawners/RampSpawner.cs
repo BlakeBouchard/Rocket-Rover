@@ -8,8 +8,10 @@ public class RampSpawner : MonoBehaviour {
     public float rampSpeed = 10.0f;
     public float baseSpawnTime = 4.0f;
 
+    public int highScore = 0;
+
 	// Use this for initialization
-	void Start ()
+	void Start()
     {
         StartCoroutine("SpawnRamp");
 	}
@@ -26,7 +28,7 @@ public class RampSpawner : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
     {
 	
 	}
