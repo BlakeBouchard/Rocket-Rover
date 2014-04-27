@@ -21,6 +21,8 @@ public class PurpleAlien : Alien {
     IEnumerator ShootBullets()
     {
         yield return new WaitForSeconds(timeUntilShoot);
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        audioSources[1].Play();
         for (float i = 1.0f; i <= numBullets && isActive; i += 1.0f)
         {
             Transform bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as Transform;

@@ -32,6 +32,7 @@ public class Launcher : MonoBehaviour {
             rocket.name = rocketPrefab.name;
             float rocketAngle = transform.eulerAngles.z * Mathf.Deg2Rad;
             rocket.rigidbody2D.velocity = new Vector2(Mathf.Cos(rocketAngle) * rocketSpeed, Mathf.Sin(rocketAngle) * rocketSpeed);
+            audio.Play();
         }
 	}
 }
