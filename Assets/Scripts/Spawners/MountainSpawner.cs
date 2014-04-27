@@ -5,7 +5,8 @@ public class MountainSpawner : MonoBehaviour {
 
     public Transform[] mountainPrefabs;
 
-    public float spawnSpeed = 1;
+    public float baseSpawnTime = 1.0f;
+    public float spawnEntropy = 0.5f;
 
 	// Use this for initialization
 	void Start()
@@ -17,9 +18,12 @@ public class MountainSpawner : MonoBehaviour {
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnSpeed);
+            float spawnTime = baseSpawnTime + Random.Range(-spawnEntropy / 2, spawnEntropy / 2);
+            yield return new WaitForSeconds(spawnTime);
             int randomMountainNumber = Random.Range(0, mountainPrefabs.Length);
-            Instantiate(mountainPrefabs[randomMountainNumber], transform.position, Quaternion.identity);
+            Transform mountain = Instantiate(mountainPrefabs[randomMountainNumber], transform.position, Quaternion.identity) as Transform;
+            mountain.name = mountainPrefabs[randomMountainNumber].name;
+            mountain.parent = this.transform;
         }
     }
 	

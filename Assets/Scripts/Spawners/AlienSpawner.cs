@@ -6,6 +6,7 @@ public class AlienSpawner : MonoBehaviour {
     public Transform alienPrefab;
 
     public float baseSpawnTime = 3.0f;
+    public float spawnEntropy = 1.0f;
     public float warningTime = 1.0f;
 
     public Transform warningSignPrefab;
@@ -19,11 +20,13 @@ public class AlienSpawner : MonoBehaviour {
     IEnumerator SpawnAlien()
     {
         while (true) {
-            yield return new WaitForSeconds(baseSpawnTime - warningTime);
+            float spawnTime = baseSpawnTime + Random.Range(-spawnEntropy / 2, spawnEntropy / 2);
+            yield return new WaitForSeconds(spawnTime - warningTime);
             Transform warningSign = Instantiate(warningSignPrefab) as Transform;
             yield return new WaitForSeconds(warningTime);
             Transform alien = Instantiate(alienPrefab, transform.position, Quaternion.identity) as Transform;
             alien.name = alienPrefab.name;
+            alien.parent = this.transform;
             Destroy(warningSign.gameObject);
         }
     }

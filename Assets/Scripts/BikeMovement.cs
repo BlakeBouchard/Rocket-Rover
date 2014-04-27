@@ -50,6 +50,7 @@ public class BikeMovement : MonoBehaviour {
         {
             // Add upward force
             rigidbody2D.AddForce(new Vector2(0, jumpForce));
+            audio.Play();
             onGround = false;
         }
 	}

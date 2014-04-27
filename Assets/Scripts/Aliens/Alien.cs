@@ -36,7 +36,7 @@ public class Alien : MonoBehaviour {
     {
         if (collision.collider.tag == "PlayerProjectile")
         {
-            BlewUp();
+            StartCoroutine("BlewUp");
         }
         else if (collision.collider.tag == "Boundary")
         {
@@ -51,7 +51,7 @@ public class Alien : MonoBehaviour {
     }
     */
 
-    protected void BlewUp()
+    IEnumerator BlewUp()
     {
         SpriteRenderer sprite = this.GetComponent<SpriteRenderer>();
         sprite.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
@@ -63,6 +63,8 @@ public class Alien : MonoBehaviour {
         // isActive = false;
         collider2D.enabled = false;
         this.isActive = false;
+        yield return new WaitForSeconds(3.0f);
+        Destroy(this.gameObject);
     }
 	
 	// Update is called once per frame

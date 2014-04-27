@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 60: {fileID: 6000000}
-  - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
+  - 114: {fileID: 11400000}
   m_Layer: 10
   m_Name: Ramp
   m_TagString: Ground
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b09a85abc358964ebd1ce7c8d607059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: -.100000001
+  cleanupPrefab: {fileID: 400000, guid: 3d8b41db1e84456408c83be336e0145b, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
