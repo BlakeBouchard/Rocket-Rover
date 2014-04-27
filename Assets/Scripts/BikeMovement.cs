@@ -9,10 +9,17 @@ public class BikeMovement : MonoBehaviour {
 
     private bool onGround = false;
 
+    public float distanceTravelled = 0;
+    GUIText distanceLabel;
+
+    public float velocity = 40.0f;
+
+    public Transform gameOverPrefab;
+
 	// Use this for initialization
-	void Start ()
+	void Start()
     {
-	    
+        this.distanceLabel = GameObject.Find("Distance Travelled").GetComponent<GUIText>();
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -25,14 +32,19 @@ public class BikeMovement : MonoBehaviour {
         }
         else if (colliderTag == "Enemy" || colliderTag == "EnemyProjectile")
         {
-            Application.LoadLevel(Application.loadedLevel);
+            Debug.Log("Player Exploded!");
+            Instantiate(gameOverPrefab);
+            Destroy(this.gameObject);
         }
     }
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
     {
         rigidbody2D.AddForce(new Vector2(Input.GetAxis("Horizontal") * acceleration, 0));
+
+        distanceTravelled += velocity * Time.deltaTime;
+        distanceLabel.text = "Distance Travelled: " + (int)distanceTravelled + " m";
 
         if (!onGround)
         {

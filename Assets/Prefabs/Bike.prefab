@@ -325,6 +325,7 @@ MonoBehaviour:
   acceleration: 100
   jumpForce: 1800
   torque: -2
+  gameOverPrefab: {fileID: 400000, guid: 44bc98cb486ecb44bb77dbfb4bebbd21, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
