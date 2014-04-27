@@ -45,12 +45,12 @@ public class BikeMovement : MonoBehaviour {
             GUIText blewUpGUI = GameObject.Find("You Blew Up").GetComponent<GUIText>();
             if ((int)distanceTravelled > highScore)
             {
-                blewUpGUI.text = "New High Score! You roved " + (int)distanceTravelled + " metres!";
+                blewUpGUI.text = "New High Score!\nYou roved " + (int)distanceTravelled + " metres!";
                 PlayerPrefs.SetInt("High Score", (int)distanceTravelled);
             }
             else
             {
-                blewUpGUI.text = "You got blown up by Mars aliens! Your high score is: " + highScore + " metres";
+                blewUpGUI.text = "You got blown up by Mars aliens!\nYour high score is: " + highScore + " metres";
             }
             Destroy(this.gameObject);
         }
@@ -75,6 +75,11 @@ public class BikeMovement : MonoBehaviour {
             // Add upward force
             rigidbody2D.AddForce(new Vector2(0, jumpForce));
             onGround = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.LoadLevel(0);
         }
 	}
 }
