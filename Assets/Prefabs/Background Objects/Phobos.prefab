@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: .00999999978
+  cleanupObject: {fileID: 400000, guid: ddc56ccd138cf8a41aa718b53078a255, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

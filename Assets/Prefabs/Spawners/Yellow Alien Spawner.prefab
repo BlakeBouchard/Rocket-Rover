@@ -40,6 +40,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alienPrefab: {fileID: 400004, guid: 59616349c7ee6fc4a9c8cbe4e3bfa376, type: 2}
   baseSpawnTime: 6
+  warningTime: 1
+  warningSignPrefab: {fileID: 400000, guid: 5025882f827e7b14bbf7587ba286166e, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
