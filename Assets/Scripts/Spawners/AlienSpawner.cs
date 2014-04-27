@@ -15,9 +15,9 @@ public class AlienSpawner : MonoBehaviour {
     IEnumerator SpawnAlien()
     {
         while (true) {
+            yield return new WaitForSeconds(baseSpawnTime);
             Transform alien = Instantiate(alienPrefab, transform.position, Quaternion.identity) as Transform;
             alien.name = alienPrefab.name;
-            yield return new WaitForSeconds(baseSpawnTime);
         }
     }
 	

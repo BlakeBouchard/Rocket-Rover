@@ -18,10 +18,10 @@ public class RampSpawner : MonoBehaviour {
     {
         while (true)
         {
+            yield return new WaitForSeconds(baseSpawnTime);
             Transform ramp = Instantiate(rampPrefab, transform.position, Quaternion.identity) as Transform;
             ramp.name = rampPrefab.name;
             ramp.rigidbody2D.velocity = new Vector3(-rampSpeed, 0, 0);
-            yield return new WaitForSeconds(baseSpawnTime);
         }
     }
 	

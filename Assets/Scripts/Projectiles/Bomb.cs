@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bomb : MonoBehaviour {
 
-    public float dragForce = 1000.0f;
+    public float dragForce = 100.0f;
 
 	// Use this for initialization
 	void Start()

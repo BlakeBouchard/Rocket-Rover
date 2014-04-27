@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 100
-  jumpForce: 1000
+  jumpForce: 1800
   torque: -2
 --- !u!114 &11400002
 MonoBehaviour:

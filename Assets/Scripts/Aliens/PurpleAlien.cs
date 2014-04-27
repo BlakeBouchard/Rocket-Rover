@@ -28,7 +28,7 @@ public class PurpleAlien : Alien {
             Transform bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as Transform;
             bullet.name = bulletPrefab.name;
             float bulletAngle = (minBulletAngle + ((maxBulletAngle - minBulletAngle) * (i / numBullets)));
-            Debug.Log("Bullet " + i + " angle:" + bulletAngle);
+            // Debug.Log("Bullet " + i + " angle:" + bulletAngle);
             bulletAngle *= Mathf.Deg2Rad;
             bullet.rigidbody2D.velocity = new Vector2(Mathf.Cos(bulletAngle) * bulletSpeed, Mathf.Sin(bulletAngle) * bulletSpeed);
             yield return new WaitForSeconds(timeBetweenBullets);
