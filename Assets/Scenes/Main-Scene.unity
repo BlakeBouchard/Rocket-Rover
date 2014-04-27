@@ -223,6 +223,7 @@ MonoBehaviour:
   velocity: 40
   gameOverPrefab: {fileID: 400000, guid: 44bc98cb486ecb44bb77dbfb4bebbd21, type: 2}
   explosionPrefab: {fileID: 400000, guid: 1966a31c4f7108d4c9f39b2c3ac0e110, type: 2}
+  highScore: 0
 --- !u!58 &154796012
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1669,7 +1670,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1676836335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -7.42039967, z: 0}
   m_LocalScale: {x: 30, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 1102046739}

@@ -17,10 +17,16 @@ public class BikeMovement : MonoBehaviour {
     public Transform gameOverPrefab;
     public Transform explosionPrefab;
 
+    public int highScore = 0;
+
 	// Use this for initialization
 	void Start()
     {
         this.distanceLabel = GameObject.Find("Distance Travelled").GetComponent<GUIText>();
+        if (PlayerPrefs.HasKey("High Score"))
+        {
+            this.highScore = PlayerPrefs.GetInt("High Score");
+        }
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -36,6 +42,16 @@ public class BikeMovement : MonoBehaviour {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Debug.Log("Player Exploded!");
             Instantiate(gameOverPrefab);
+            GUIText blewUpGUI = GameObject.Find("You Blew Up").GetComponent<GUIText>();
+            if ((int)distanceTravelled > highScore)
+            {
+                blewUpGUI.text = "New High Score! You roved " + (int)distanceTravelled + " metres!";
+                PlayerPrefs.SetInt("High Score", (int)distanceTravelled);
+            }
+            else
+            {
+                blewUpGUI.text = "You got blown up by Mars aliens! Your high score is: " + highScore + " metres";
+            }
             Destroy(this.gameObject);
         }
     }
