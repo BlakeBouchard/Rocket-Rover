@@ -82,7 +82,7 @@ GameObject:
   - 58: {fileID: 5800000}
   - 82: {fileID: 8200000}
   m_Layer: 8
-  m_Name: Bike
+  m_Name: Rover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

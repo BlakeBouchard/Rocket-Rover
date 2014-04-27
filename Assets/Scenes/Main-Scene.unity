@@ -346,7 +346,7 @@ GameObject:
   - 58: {fileID: 154796010}
   - 82: {fileID: 154796014}
   m_Layer: 8
-  m_Name: Bike
+  m_Name: Rover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1064,7 +1064,8 @@ MonoBehaviour:
   mountainPrefabs:
   - {fileID: 400000, guid: 8d793154e27d1944c9d030582b74af76, type: 2}
   - {fileID: 400000, guid: ea0deb98ab10ba94d9a85d64a2424741, type: 2}
-  spawnSpeed: 1
+  baseSpawnTime: 1
+  spawnEntropy: .5
 --- !u!1 &699548306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1589,7 @@ MonoBehaviour:
   rampPrefab: {fileID: 400000, guid: ddb68f059c1da384cae7c8fc3ef661fb, type: 2}
   rampSpeed: 10
   baseSpawnTime: 4
+  spawnEntropy: 1
   highScore: 0
 --- !u!4 &953654234
 Transform:

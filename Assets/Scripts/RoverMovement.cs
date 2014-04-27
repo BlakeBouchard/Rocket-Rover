@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BikeMovement : MonoBehaviour {
+public class RoverMovement : MonoBehaviour {
 
-    public float acceleration = 80.0f;
-    public float jumpForce = 800.0f;
-    public float torque = -10.0f;
+    public float acceleration = 100.0f;
+    public float jumpForce = 1800.0f;
+    public float torque = -2.0f;
 
     private bool onGround = false;
 
@@ -29,7 +29,7 @@ public class BikeMovement : MonoBehaviour {
         }
         else if (colliderTag == "Enemy" || colliderTag == "EnemyProjectile")
         {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Instantiate(explosionPrefab, collision.collider.transform.position, Quaternion.identity);
             gameManager.EndGame();
             Destroy(this.gameObject);
         }
