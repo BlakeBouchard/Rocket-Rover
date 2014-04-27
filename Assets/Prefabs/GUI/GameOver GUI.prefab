@@ -172,7 +172,7 @@ GUIText:
   m_GameObject: {fileID: 100006}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Try Again?
+  m_Text: Get Revenge on those Alien Bastards?
   m_Anchor: 1
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -180,7 +180,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 8f0bb3f296e2df84496b5897c630c82c, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 36
+  m_FontSize: 30
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
