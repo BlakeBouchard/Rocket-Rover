@@ -15,6 +15,7 @@ public class BikeMovement : MonoBehaviour {
     public float velocity = 40.0f;
 
     public Transform gameOverPrefab;
+    public Transform explosionPrefab;
 
 	// Use this for initialization
 	void Start()
@@ -32,6 +33,7 @@ public class BikeMovement : MonoBehaviour {
         }
         else if (colliderTag == "Enemy" || colliderTag == "EnemyProjectile")
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Debug.Log("Player Exploded!");
             Instantiate(gameOverPrefab);
             Destroy(this.gameObject);
