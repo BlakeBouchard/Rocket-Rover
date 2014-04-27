@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour {
     public float distanceTravelled = 0;
     GUIText distanceLabel;
 
+    public int difficulty = 1;
+    public int difficultyThreshold = 1000;
     public float velocity = 40.0f;
     public int highScore = 0;
 
@@ -46,6 +48,11 @@ public class GameManager : MonoBehaviour {
         {
             distanceTravelled += velocity * Time.deltaTime;
             distanceLabel.text = "Distance Travelled: " + (int)distanceTravelled + " m";
+        }
+
+        if (distanceTravelled / (difficulty * difficultyThreshold) > 1)
+        {
+            BroadcastMessage("IncreaseDifficulty", ++difficulty, SendMessageOptions.DontRequireReceiver);
         }
 	}
 }

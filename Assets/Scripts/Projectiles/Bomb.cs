@@ -18,6 +18,12 @@ public class Bomb : MonoBehaviour {
         {
             rigidbody2D.AddForce(new Vector2(-dragForce, 0));
         }
+        else if (colliderTag == "PlayerProjectile")
+        {
+            this.gameObject.tag = "PlayerProjectile";
+            this.gameObject.layer = 9;
+            GetComponent<SpriteRenderer>().color = Color.blue;
+        }
         else if (colliderTag == "Boundary")
         {
             Destroy(this.gameObject);

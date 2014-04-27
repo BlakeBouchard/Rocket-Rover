@@ -10,7 +10,10 @@ public class BackgroundObject : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-	
+        if (!cleanupObject)
+        {
+            Debug.Log("No cleanup object assigned for: " + gameObject.name);
+        }
 	}
 	
 	// Update is called once per frame

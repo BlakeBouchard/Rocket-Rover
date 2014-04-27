@@ -5,6 +5,7 @@ public class RampSpawner : MonoBehaviour {
 
     public Transform rampPrefab;
 
+    private int difficulty = 1;
     public float rampSpeed = 10.0f;
     public float baseSpawnTime = 4.0f;
     public float spawnEntropy = 1.0f;
@@ -17,11 +18,19 @@ public class RampSpawner : MonoBehaviour {
         StartCoroutine("SpawnRamp");
 	}
 
+    void IncreaseDifficulty(int newDifficulty)
+    {
+        this.difficulty = newDifficulty;
+        Debug.Log(name + " increased difficulty to " + this.difficulty);
+    }
+
     IEnumerator SpawnRamp()
     {
         while (true)
         {
-            yield return new WaitForSeconds(baseSpawnTime);
+            float spawnTime = (baseSpawnTime + Random.Range(-spawnEntropy / 2, spawnEntropy / 2)) / Mathf.Sqrt(difficulty);
+            Debug.Log(rampPrefab.name + " spawn time: " + spawnTime);
+            yield return new WaitForSeconds(spawnTime);
             Transform ramp = Instantiate(rampPrefab, transform.position, Quaternion.identity) as Transform;
             ramp.name = rampPrefab.name;
             ramp.parent = this.transform;

@@ -5,6 +5,8 @@ public class AlienSpawner : MonoBehaviour {
 
     public Transform alienPrefab;
 
+    private int difficulty = 1;
+
     public float baseSpawnTime = 3.0f;
     public float spawnEntropy = 1.0f;
     public float warningTime = 1.0f;
@@ -17,10 +19,17 @@ public class AlienSpawner : MonoBehaviour {
         StartCoroutine("SpawnAlien");
 	}
 
+    void IncreaseDifficulty(int newDifficulty)
+    {
+        this.difficulty = newDifficulty;
+        Debug.Log(name + " increased difficulty to " + this.difficulty);
+    }
+
     IEnumerator SpawnAlien()
     {
         while (true) {
-            float spawnTime = baseSpawnTime + Random.Range(-spawnEntropy / 2, spawnEntropy / 2);
+            float spawnTime = (baseSpawnTime + Random.Range(-spawnEntropy / 2, spawnEntropy / 2)) / Mathf.Sqrt(difficulty);
+            Debug.Log(alienPrefab.name + " spawn time: " + spawnTime);
             yield return new WaitForSeconds(spawnTime - warningTime);
             Transform warningSign = Instantiate(warningSignPrefab) as Transform;
             yield return new WaitForSeconds(warningTime);
