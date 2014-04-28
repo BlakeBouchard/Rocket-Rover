@@ -188,7 +188,7 @@ MonoBehaviour:
   maxForwardForce: 1800
   killSpinForce: 50
   timeUntilBombs: .5
-  timeBetweenBombs: .5
+  timeBetweenBombs: 1
   yellowBombPrefab: {fileID: 400000, guid: 2bb278cb8b7684640b5999474772ae08, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:

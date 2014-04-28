@@ -245,9 +245,9 @@ MonoBehaviour:
   killSpinForce: 50
   timeUntilShoot: 1
   timeBetweenBullets: .100000001
-  numBullets: 7
+  numBullets: 3
   bulletSpeed: 10
-  minBulletAngle: 180
+  minBulletAngle: 150
   maxBulletAngle: 330
   bulletPrefab: {fileID: 400000, guid: f26aa4a8dabab2545885d760d6d4b4c6, type: 2}
 --- !u!212 &21200000

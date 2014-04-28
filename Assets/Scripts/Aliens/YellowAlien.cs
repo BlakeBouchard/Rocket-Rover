@@ -5,6 +5,7 @@ public class YellowAlien : Alien {
 
     public float timeUntilBombs = 0.5f;
     public float timeBetweenBombs = 1.0f;
+    private int difficulty;
 
     public Transform yellowBombPrefab;
 
@@ -13,6 +14,7 @@ public class YellowAlien : Alien {
     {
         Jump();
         StartCoroutine("DropBombs");
+        this.difficulty = GameObject.Find("Game Manager").GetComponent<GameManager>().difficulty;
 	}
 
     IEnumerator DropBombs()
@@ -21,7 +23,7 @@ public class YellowAlien : Alien {
         while (isActive)
         {
             Instantiate(yellowBombPrefab, new Vector3(transform.position.x, transform.position.y, 2), Quaternion.identity);
-            yield return new WaitForSeconds(timeBetweenBombs);
+            yield return new WaitForSeconds(timeBetweenBombs / Mathf.Sqrt(difficulty));
         }
     }
 	

@@ -22,7 +22,8 @@ public class Bomb : MonoBehaviour {
         {
             this.gameObject.tag = "PlayerProjectile";
             this.gameObject.layer = 9;
-            GetComponent<SpriteRenderer>().color = Color.blue;
+            GetComponent<SpriteRenderer>().color = Color.green;
+            //dragForce *= -1;
         }
         else if (colliderTag == "Boundary")
         {

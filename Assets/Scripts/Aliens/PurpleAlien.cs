@@ -5,10 +5,11 @@ public class PurpleAlien : Alien {
 
     public float timeUntilShoot = 1.0f;
     public float timeBetweenBullets = 0.1f;
-    public int numBullets = 7;
+    public int numBullets = 3;
     public float bulletSpeed = 10.0f;
     public float minBulletAngle = 0.0f;
     public float maxBulletAngle = 180.0f;
+    private int difficulty;
 
     public Transform bulletPrefab;
     
@@ -16,6 +17,7 @@ public class PurpleAlien : Alien {
     {
         Jump();
         StartCoroutine("ShootBullets");
+        this.numBullets += GameObject.Find("Game Manager").GetComponent<GameManager>().difficulty;
     }
 
     IEnumerator ShootBullets()

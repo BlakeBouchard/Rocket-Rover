@@ -7,6 +7,8 @@ public class RoverMovement : MonoBehaviour {
     public float jumpForce = 1800.0f;
     public float torque = -2.0f;
 
+    public bool invincible = false;
+
     private bool onGround = false;
 
     public Transform explosionPrefab;
@@ -30,8 +32,11 @@ public class RoverMovement : MonoBehaviour {
         else if (colliderTag == "Enemy" || colliderTag == "EnemyProjectile")
         {
             Instantiate(explosionPrefab, collision.collider.transform.position, Quaternion.identity);
-            gameManager.EndGame();
-            Destroy(this.gameObject);
+            if (!invincible)
+            {
+                gameManager.EndGame();
+                Destroy(this.gameObject);
+            }
         }
     }
 	
